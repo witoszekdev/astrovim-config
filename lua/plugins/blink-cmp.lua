@@ -1,11 +1,17 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 ---@diagnostic disable-next-line: unused-local
 local blink = require "blink.cmp"
 
 ---@type LazySpec
 return {
   {
+    -- re-enable luasnip for other plugins
+    "L3MON4D3/LuaSnip",
+    enabled = true,
+  },
+  {
     "Saghen/blink.cmp",
-    version = "*",
+    version = nil,
     build = "cargo build --release",
     --- @type blink.cmp.Config
     opts = {
@@ -17,7 +23,7 @@ return {
         },
       },
       keymap = {
-        ["<M-l>"] = { "accept" },
+        -- ["<M-l>"] = { "accept" },
       },
     },
   },

@@ -19,8 +19,8 @@ return {
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
 
-  -- other
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  -- other
   { import = "astrocommunity.recipes.auto-session-restore" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.search.grug-far-nvim" },
@@ -52,6 +52,7 @@ return {
   { import = "astrocommunity.lsp.inc-rename-nvim" },
   { import = "astrocommunity.lsp.garbage-day-nvim" },
   { import = "astrocommunity.lsp.delimited-nvim" },
+  { import = "astrocommunity.editing-support.copilotchat-nvim" },
   -- { import = "astrocommunity.media.image-nvim" },
   { import = "astrocommunity.media.img-clip-nvim" },
   { import = "astrocommunity.media.vim-wakatime" },
@@ -61,6 +62,21 @@ return {
   -- { import = "astrocommunity.editing-support.nvim-treesitter-context" },
   -- { import = "astrocommunitt.editing-support.nvim-origami" },
   { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.dial-nvim" },
+  { import = "astrocommunity.editing-support.refactoring-nvim" },
+  { import = "astrocommunity.editing-support.text-case-nvim" },
+  { import = "astrocommunity.editing-support.treesj" },
+  { import = "astrocommunity.editing-support.telescope-undo-nvim" },
+  { import = "astrocommunity.editing-support.wildfire-nvim" },
+  { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.debugging.nvim-chainsaw" },
+  { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
+  { import = "astrocommunity.debugging.telescope-dap-nvim" },
+  -- { import = "astrocommunity.workflow.hardtime-nvim" }, -- annoyting on purpose
+  { import = "astrocommunity.scrolling.mini-animate" },
+
+  -- todo: check it out later
+  -- { import = "astrocommunity.code-runner.sniprun" },
 
   -- import/override with your plugins folder
 }

@@ -49,6 +49,22 @@ return {
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
         ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
 
+        -- buffer overrides
+        ["<Leader>bc"] = false,
+        ["<Leader>bC"] = false,
+        ["<Leader>ba"] = {
+          function() require("astrocore.buffer").close_all(true) end,
+          desc = "Close all buffers except current",
+        },
+        ["<Leader>bA"] = {
+          function() require("astrocore.buffer").close_all() end,
+          desc = "Close all buffers",
+        },
+        ["<Leader>c"] = false,
+        ["<Leader>C"] = false,
+        ["<Leader>bb"] = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
+        ["<Leader>bB"] = { function() require("astrocore.buffer").close(0, true) end, desc = "Force close buffer" },
+
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()
