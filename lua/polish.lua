@@ -20,3 +20,5 @@ vim.api.nvim_create_user_command(
   function() require("neogit").open() end,
   { desc = "Open Neogit", nargs = "*", bang = true }
 )
+
+vim.opt.clipboard = ""
