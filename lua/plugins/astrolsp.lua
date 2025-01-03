@@ -37,11 +37,13 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "textlsp",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      textLSP = {},
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
     },
     -- customize how language servers are attached
