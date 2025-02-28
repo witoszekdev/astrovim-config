@@ -68,6 +68,7 @@ return {
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
+  { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.debugging.nvim-chainsaw" },
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },

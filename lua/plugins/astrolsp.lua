@@ -44,6 +44,23 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       textLSP = {},
+      graphql = {
+        filetypes = {
+          "graphql",
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "tsx",
+        },
+      },
+      vtsls = {
+        settings = {
+          vtsls = {
+            autoUseWorkspaceTsdk = true
+          }
+        }
+      }
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
     },
     -- customize how language servers are attached
