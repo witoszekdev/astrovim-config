@@ -57,7 +57,13 @@ return {
       vtsls = {
         settings = {
           vtsls = {
-            autoUseWorkspaceTsdk = true
+            -- autoUseWorkspaceTsdk = true,
+            experimental = {
+              completion = {
+                enableServerSideFuzzyMatch = true,
+                entriesLimit = 50
+              }
+            }
           }
         }
       }

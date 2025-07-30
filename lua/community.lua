@@ -18,6 +18,7 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
+  { import ="astrocommunity.pack.go" },
 
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   -- other
@@ -26,7 +27,9 @@ return {
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  -- disabled due to issues with snippets
   { import = "astrocommunity.completion.blink-cmp" },
+  { import = "astrocommunity.completion.copilot-lua-cmp"},
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-bracketed" },
@@ -38,7 +41,7 @@ return {
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.git.nvim-tinygit" },
   { import = "astrocommunity.git.blame-nvim" },
-  { import = "astrocommunity.git.diffview-nvim" },
+  -- { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.gitgraph-nvim" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.docker.lazydocker" },
@@ -69,7 +72,6 @@ return {
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
-  { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.debugging.nvim-chainsaw" },
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
