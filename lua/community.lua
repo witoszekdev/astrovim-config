@@ -18,7 +18,8 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
-  { import ="astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.swift" },
 
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   -- other
