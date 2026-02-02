@@ -47,7 +47,7 @@ return {
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-        ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
+        ["<C-p>"] = { function() Snacks.picker.files() end, desc = "Find files" },
         ["<C-->"] = { function() vim.cmd "vertical resize -5" end, desc = "Smaller vim window" },
         ["<C-=>"] = { function() vim.cmd "vertical resize +5" end, desc = "Bigger vim window" },
 

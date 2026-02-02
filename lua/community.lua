@@ -23,7 +23,6 @@ return {
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   -- other
   { import = "astrocommunity.recipes.auto-session-restore" },
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
@@ -60,16 +59,10 @@ return {
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.text-case-nvim" },
   { import = "astrocommunity.editing-support.treesj" },
-  { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.debugging.nvim-chainsaw" },
-  { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
-  { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.scrolling.mini-animate" },
-
-  -- Telescope for v5 (replaced by snacks.picker but keeping for compatibility)
-  { import = "astrocommunity.fuzzy-finder.telescope-nvim" },
 
   -- import/override with your plugins folder
 }

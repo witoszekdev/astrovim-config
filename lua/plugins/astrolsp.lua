@@ -63,13 +63,14 @@ return {
       n = {
         gr = {
           function()
-            require("telescope.builtin").lsp_references {
+            Snacks.picker.lsp_references {
               include_declaration = false,
-              reuse_win = true,
-              default_text = "!import",
-              file_ignore_patterns = { "node_modules/**" },
+              jump = { reuse_win = true },
+              -- Note: snacks uses 'exclude' patterns, not file_ignore_patterns
+              -- Pattern filtering is handled differently - you can filter in the picker UI
             }
           end,
+          desc = "LSP References (excluding imports)",
         },
       },
     },
