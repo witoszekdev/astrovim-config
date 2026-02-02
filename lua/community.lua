@@ -19,7 +19,6 @@ return {
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.pack.swift" },
 
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   -- other
@@ -28,7 +27,6 @@ return {
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
-  -- disabled due to issues with snippets
   { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.completion.copilot-lua-cmp"},
   { import = "astrocommunity.motion.harpoon" },
@@ -36,13 +34,12 @@ return {
   { import = "astrocommunity.motion.mini-bracketed" },
   { import = "astrocommunity.motion.vim-matchup" },
   { import = "astrocommunity.motion.nvim-surround" },
-  { import = "astrocommunity.motion.nvim-spider" }, -- test this out, changes w motion
+  { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
   { import = "astrocommunity.git.gitlinker-nvim" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.git.nvim-tinygit" },
   { import = "astrocommunity.git.blame-nvim" },
-  -- { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.gitgraph-nvim" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.docker.lazydocker" },
@@ -55,16 +52,9 @@ return {
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.lsp.inc-rename-nvim" },
   { import = "astrocommunity.lsp.garbage-day-nvim" },
-  { import = "astrocommunity.lsp.delimited-nvim" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
-  -- { import = "astrocommunity.media.image-nvim" },
   { import = "astrocommunity.media.img-clip-nvim" },
   { import = "astrocommunity.media.vim-wakatime" },
-
-  -- { import = "astrocommunity.git.fugit2-nvim" },
-  -- we already have context in Asrtovim, so maybe let's try it out
-  -- { import = "astrocommunity.editing-support.nvim-treesitter-context" },
-  -- { import = "astrocommunitt.editing-support.nvim-origami" },
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
@@ -76,11 +66,10 @@ return {
   { import = "astrocommunity.debugging.nvim-chainsaw" },
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
-  -- { import = "astrocommunity.workflow.hardtime-nvim" }, -- annoyting on purpose
   { import = "astrocommunity.scrolling.mini-animate" },
 
-  -- todo: check it out later
-  -- { import = "astrocommunity.code-runner.sniprun" },
+  -- Telescope for v5 (replaced by snacks.picker but keeping for compatibility)
+  { import = "astrocommunity.fuzzy-finder.telescope-nvim" },
 
   -- import/override with your plugins folder
 }
