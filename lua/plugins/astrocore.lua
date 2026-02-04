@@ -41,6 +41,16 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      t = {
+        ["<C-w>h"] = { "<C-\\><C-n><C-w>h", desc = "Navigate to left window" },
+        ["<C-w>j"] = { "<C-\\><C-n><C-w>j", desc = "Navigate to down window" },
+        ["<C-w>k"] = { "<C-\\><C-n><C-w>k", desc = "Navigate to up window" },
+        ["<C-w>l"] = { "<C-\\><C-n><C-w>l", desc = "Navigate to right window" },
+        ["<C-w><C-h>"] = { "<C-\\><C-n><C-w>h", desc = "Navigate to left window" },
+        ["<C-w><C-j>"] = { "<C-\\><C-n><C-w>j", desc = "Navigate to down window" },
+        ["<C-w><C-k>"] = { "<C-\\><C-n><C-w>k", desc = "Navigate to up window" },
+        ["<C-w><C-l>"] = { "<C-\\><C-n><C-w>l", desc = "Navigate to right window" },
+      },
       n = {
         -- second key is the lefthand side of the map
 

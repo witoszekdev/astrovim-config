@@ -27,7 +27,7 @@ return {
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.completion.blink-cmp" },
-  { import = "astrocommunity.completion.copilot-lua-cmp"},
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-bracketed" },
@@ -36,7 +36,7 @@ return {
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
   { import = "astrocommunity.git.gitlinker-nvim" },
-  { import = "astrocommunity.git.octo-nvim" },
+  -- { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.git.nvim-tinygit" },
   { import = "astrocommunity.git.blame-nvim" },
   { import = "astrocommunity.git.gitgraph-nvim" },
@@ -45,7 +45,7 @@ return {
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
-  { import = "astrocommunity.lsp.ts-error-translator-nvim" },
+  -- { import = "astrocommunity.lsp.ts-error-translator-nvim" },
   { import = "astrocommunity.lsp.lsplinks-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
@@ -53,16 +53,19 @@ return {
   { import = "astrocommunity.lsp.garbage-day-nvim" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.media.img-clip-nvim" },
-  { import = "astrocommunity.media.vim-wakatime" },
+  -- { import = "astrocommunity.media.vim-wakatime" }, -- Disabled due to file descriptor issues
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.text-case-nvim" },
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
-  { import = "astrocommunity.editing-support.bigfile-nvim" },
+  -- { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.debugging.nvim-chainsaw" },
   { import = "astrocommunity.scrolling.mini-animate" },
+
+  { import = "astrocommunity.ai.opencode-nvim" },
+
 
   -- import/override with your plugins folder
 }
