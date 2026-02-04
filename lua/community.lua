@@ -64,8 +64,8 @@ return {
   { import = "astrocommunity.debugging.nvim-chainsaw" },
   { import = "astrocommunity.scrolling.mini-animate" },
 
-  { import = "astrocommunity.ai.opencode-nvim" },
-
+  -- { import = "astrocommunity.ai.opencode-nvim" },
+  { import = "astrocommunity.editing-support.codecompanion-nvim" },
 
   -- import/override with your plugins folder
 }
