@@ -7,6 +7,10 @@ return {
     opts.filesystem.follow_current_file = { enabled = true }
     opts.filesystem.hijack_netrw_behavior = "open_default"
     opts.filesystem.use_libuv_file_watcher = true
+    
+    -- Show dotfiles by default
+    if not opts.filesystem.filtered_items then opts.filesystem.filtered_items = {} end
+    opts.filesystem.filtered_items.hide_dotfiles = false
     opts.filesystem.window = {
       mappings = {
         ["H"] = "toggle_hidden",
