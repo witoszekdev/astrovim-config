@@ -25,6 +25,7 @@ return {
       opts.filetypes = {
         markdown = true,
         gitcommit = true,
+        NeogitCommitMessage = true,
       }
 
       -- Disable the panel to avoid notification spam

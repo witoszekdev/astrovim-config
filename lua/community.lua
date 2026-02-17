@@ -27,7 +27,7 @@ return {
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.completion.blink-cmp" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-bracketed" },
@@ -51,7 +51,7 @@ return {
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.lsp.inc-rename-nvim" },
   { import = "astrocommunity.lsp.garbage-day-nvim" },
-  { import = "astrocommunity.editing-support.copilotchat-nvim" },
+  -- { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.media.img-clip-nvim" },
   -- { import = "astrocommunity.media.vim-wakatime" }, -- Disabled due to file descriptor issues
   { import = "astrocommunity.editing-support.neogen" },
