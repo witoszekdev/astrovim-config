@@ -9,11 +9,14 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.mdx" },
   { import = "astrocommunity.pack.prisma" },
-  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.python.base" },
+  { import = "astrocommunity.pack.python.basedpyright" },
+  { import = "astrocommunity.pack.python.ruff" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.terraform" },
@@ -21,8 +24,13 @@ return {
   { import = "astrocommunity.pack.go" },
 
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
-  -- other
+
+  -- recipes
   { import = "astrocommunity.recipes.auto-session-restore" },
+  { import = "astrocommunity.recipes.diagnostic-virtual-lines-current-line" },
+  -- { import = "astrocommunity.recipes.picker-lsp-mappings" },
+
+  -- other
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
@@ -60,6 +68,7 @@ return {
   { import = "astrocommunity.editing-support.text-case-nvim" },
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
+  { import = "astrocommunity.editing-support.conform-nvim" },
   -- { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.debugging.nvim-chainsaw" },
   { import = "astrocommunity.scrolling.mini-animate" },
