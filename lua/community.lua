@@ -76,5 +76,7 @@ return {
   -- { import = "astrocommunity.ai.opencode-nvim" },
   { import = "astrocommunity.editing-support.codecompanion-nvim" },
 
+  { import = "astrocommunity.utility.nvzone-menu" },
+
   -- import/override with your plugins folder
 }
