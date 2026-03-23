@@ -22,6 +22,54 @@ return {
       virtual_text = true,
       underline = true,
     },
+    commands = {
+      SessionCleanup = {
+        function()
+          for _, tabpage in ipairs(vim.api.nvim_list_tabpages()) do
+            vim.t[tabpage].bufs = vim.tbl_filter(
+              function(b) return type(b) == "number" and vim.api.nvim_buf_is_valid(b) end,
+              vim.t[tabpage].bufs or {}
+            )
+          end
+          vim.notify("Session buffer list cleaned up", vim.log.levels.INFO)
+        end,
+        desc = "Clean up invalid entries from session buffer lists",
+      },
+      G = {
+        function() require("neogit").open() end,
+        desc = "Open Neogit",
+      },
+      CopyRelativePath = {
+        function()
+          local path = vim.fn.expand("%:p")
+          if path == "" then return vim.notify("Buffer has no file", vim.log.levels.WARN) end
+          local root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+          if vim.v.shell_error ~= 0 then return vim.notify("Not in a git repo", vim.log.levels.WARN) end
+          local rel = vim.fs.normalize(path):sub(#vim.fs.normalize(root) + 2)
+          vim.fn.setreg("+", rel)
+          vim.notify("Copied: " .. rel)
+        end,
+        desc = "Copy file path relative to Git root to clipboard",
+      },
+      CopyFullPath = {
+        function()
+          local path = vim.fs.normalize(vim.fn.expand("%:p"))
+          if path == "" then return vim.notify("Buffer has no file", vim.log.levels.WARN) end
+          vim.fn.setreg("+", path)
+          vim.notify("Copied: " .. path)
+        end,
+        desc = "Copy full file path to clipboard",
+      },
+      CopyFileName = {
+        function()
+          local name = vim.fn.expand("%:t")
+          if name == "" then return vim.notify("Buffer has no file", vim.log.levels.WARN) end
+          vim.fn.setreg("+", name)
+          vim.notify("Copied: " .. name)
+        end,
+        desc = "Copy filename to clipboard",
+      },
+    },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
