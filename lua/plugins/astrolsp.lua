@@ -32,6 +32,24 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       textLSP = {},
+      denols = {
+        single_file_support = false,
+        root_dir = function(arg, on_dir)
+          local start = type(arg) == "number" and vim.api.nvim_buf_get_name(arg) or arg
+          if type(start) ~= "string" or start == "" then return end
+          if start:find("/node_modules/", 1, true) then return end
+          local dir = vim.fn.fnamemodify(start, ":h")
+          local found = vim.fs.find({ "deno.json", "deno.jsonc" }, {
+            upward = true,
+            path = dir,
+            stop = vim.loop.os_homedir(),
+          })[1]
+          if not found then return end
+          local root = vim.fn.fnamemodify(found, ":h")
+          if type(on_dir) == "function" then on_dir(root) end
+          return root
+        end,
+      },
       graphql = {
         filetypes = {
           "graphql",
@@ -43,6 +61,27 @@ return {
         },
       },
       vtsls = {
+        root_dir = function(arg, on_dir)
+          local start = type(arg) == "number" and vim.api.nvim_buf_get_name(arg) or arg
+          if type(start) ~= "string" or start == "" then return end
+          local dir = vim.fn.fnamemodify(start, ":h")
+          local stop = vim.loop.os_homedir()
+          local deno = vim.fs.find({ "deno.json", "deno.jsonc" }, {
+            upward = true,
+            path = dir,
+            stop = stop,
+          })[1]
+          if deno and not deno:find("/node_modules/", 1, true) then return end
+          local found = vim.fs.find({ "tsconfig.json", "package.json", "jsconfig.json", ".git" }, {
+            upward = true,
+            path = dir,
+            stop = stop,
+          })[1]
+          if not found then return end
+          local root = vim.fn.fnamemodify(found, ":h")
+          if type(on_dir) == "function" then on_dir(root) end
+          return root
+        end,
         settings = {
           vtsls = {
             -- autoUseWorkspaceTsdk = true,
