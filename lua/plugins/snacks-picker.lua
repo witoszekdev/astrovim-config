@@ -8,22 +8,51 @@ return {
     -- Extend existing snacks config
     if not opts.picker then opts.picker = {} end
 
-    -- Add custom picker configuration
+    local exclude = {
+      ".git",
+      "node_modules",
+      "dist",
+      "build",
+      "out",
+      ".next",
+      ".turbo",
+      ".cache",
+      ".venv",
+      "target",
+      "*.lock",
+      "pnpm-lock.yaml",
+      "package-lock.json",
+      "yarn.lock",
+    }
+
     opts.picker = vim.tbl_deep_extend("force", opts.picker, {
-      -- Enable fuzzy matching
       matcher = {
         fuzzy = true,
         smartcase = true,
         ignorecase = true,
       },
 
-      -- Customize layouts
       layout = {
         preset = function() return vim.o.columns >= 120 and "default" or "vertical" end,
       },
 
-      -- You can add more custom configurations here
-      -- See: https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
+      sources = {
+        files = {
+          hidden = false,
+          ignored = true,
+          exclude = exclude,
+        },
+        grep = {
+          hidden = false,
+          ignored = true,
+          exclude = exclude,
+        },
+        smart = {
+          hidden = true,
+          ignored = true,
+          exclude = exclude,
+        },
+      },
     })
 
     return opts
