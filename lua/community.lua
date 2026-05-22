@@ -44,7 +44,7 @@ return {
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
   { import = "astrocommunity.git.gitlinker-nvim" },
-  -- { import = "astrocommunity.git.octo-nvim" },
+  { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.git.nvim-tinygit" },
   { import = "astrocommunity.git.blame-nvim" },
   { import = "astrocommunity.git.gitgraph-nvim" },
