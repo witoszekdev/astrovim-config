@@ -5,7 +5,6 @@
 return {
   "folke/snacks.nvim",
   opts = function(_, opts)
-    -- Extend existing snacks config
     if not opts.picker then opts.picker = {} end
 
     local exclude = {

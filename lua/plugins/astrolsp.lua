@@ -1,7 +1,7 @@
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
+-- v6: `config` table is forwarded to `vim.lsp.config[server]` (replaces lspconfig opts).
+--     Per-server settings can also live in `lsp/<server_name>.lua`.
 
 ---@type LazySpec
 return {
@@ -28,7 +28,7 @@ return {
     servers = {
       "textlsp",
     },
-    -- customize language server configuration options passed to `lspconfig`
+    -- customize language server configuration passed to `vim.lsp.config`
     ---@diagnostic disable: missing-fields
     config = {
       textLSP = {},
@@ -42,7 +42,7 @@ return {
           local found = vim.fs.find({ "deno.json", "deno.jsonc" }, {
             upward = true,
             path = dir,
-            stop = vim.loop.os_homedir(),
+            stop = vim.uv.os_homedir(),
           })[1]
           if not found then return end
           local root = vim.fn.fnamemodify(found, ":h")
@@ -65,7 +65,7 @@ return {
           local start = type(arg) == "number" and vim.api.nvim_buf_get_name(arg) or arg
           if type(start) ~= "string" or start == "" then return end
           local dir = vim.fn.fnamemodify(start, ":h")
-          local stop = vim.loop.os_homedir()
+          local stop = vim.uv.os_homedir()
           local deno = vim.fs.find({ "deno.json", "deno.jsonc" }, {
             upward = true,
             path = dir,
@@ -84,18 +84,18 @@ return {
         end,
         settings = {
           vtsls = {
-            -- autoUseWorkspaceTsdk = true,
             experimental = {
               completion = {
                 enableServerSideFuzzyMatch = true,
-                entriesLimit = 50
-              }
-            }
-          }
-        }
-      }
+                entriesLimit = 50,
+              },
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
+    -- v6: default handler is `vim.lsp.enable`; only override if needed.
     handlers = {},
     -- mappings to be set up on attaching of a language server
     mappings = {
@@ -105,15 +105,12 @@ return {
             Snacks.picker.lsp_references {
               include_declaration = false,
               jump = { reuse_win = true },
-              -- Note: snacks uses 'exclude' patterns, not file_ignore_patterns
-              -- Pattern filtering is handled differently - you can filter in the picker UI
             }
           end,
           desc = "LSP References (excluding imports)",
         },
       },
     },
-    -- A custom `on_attach` function to be run after the default `on_attach` function
     on_attach = function(client, bufnr) end,
   },
 }

@@ -10,9 +10,7 @@ return {
       },
       ---@type table<string, Flash.Config>
       modes = {
-        search = {
-          -- enabled = true,
-        },
+        search = {},
         treesitter = {
           search = {
             incremental = true,

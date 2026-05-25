@@ -12,7 +12,7 @@ return {
       local found = vim.fs.find({ "deno.json", "deno.jsonc" }, {
         upward = true,
         path = dir,
-        stop = vim.loop.os_homedir(),
+        stop = vim.uv.os_homedir(),
       })[1]
       if not found then return nil end
       if found:find("/node_modules/", 1, true) then return nil end

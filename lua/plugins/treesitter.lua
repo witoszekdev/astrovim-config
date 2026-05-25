@@ -1,0 +1,36 @@
+-- v6: nvim-treesitter is now only a parser download utility.
+-- Treesitter feature configuration lives in `astrocore.lua` under `opts.treesitter`.
+--
+-- The previous nvim-treesitter.lua patched query predicates (`nth?`, `is?`, etc.)
+-- because nvim-treesitter master on nvim 0.12 returned list[TSNode] from match[id].
+-- v6 restructured the integration; the predicate patches are likely obsolete or
+-- incompatible. Left commented for now; re-enable after testing if predicates break.
+
+---@type LazySpec
+return {}
+
+-- local function first_node(n)
+--   if type(n) == "table" then return n[1] end
+--   return n
+-- end
+--
+-- local function patch_predicates()
+--   local query = require "vim.treesitter.query"
+--   local opts = { force = true, all = true }
+--   -- (predicate registrations omitted; see v5 config lua/plugins/nvim-treesitter.lua)
+-- end
+--
+-- return {
+--   "nvim-treesitter/nvim-treesitter",
+--   init = function()
+--     vim.api.nvim_create_autocmd("User", {
+--       pattern = "LazyLoad",
+--       callback = function(args)
+--         if args.data == "nvim-treesitter" then
+--           patch_predicates()
+--           return true
+--         end
+--       end,
+--     })
+--   end,
+-- }

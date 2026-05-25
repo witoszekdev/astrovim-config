@@ -19,16 +19,12 @@ return {
         "mxsdev/nvim-dap-vscode-js",
         opts = {
           debugger_path = vim.fn.stdpath "data" .. "/lazy/vscode-js-debug",
-          adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
+          adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
         },
       },
     },
     config = function(_, opts)
-      local dap = require "dap" -------------------------------------------------------------------------
-      -- Configurations
-      -------------------------------------------------------------------------
-      -- Adapter configuration and installation instructions:
-      --   https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+      local dap = require "dap"
 
       local function url_prompt(default)
         default = default or "http://localhost:3000"
@@ -58,12 +54,9 @@ return {
         end)
       end
 
-      -- web dev configs
       for _, language in ipairs(js_based_languages) do
         dap.configurations[language] = {
           {
-            -- make sure to start up Chrome in debug mode first:
-            -- $ google-chrome --remote-debugging-port=9222 --user-data-dir=remote-debug-profile
             name = "Attach to Chrome process (port 9222)",
             type = "pwa-chrome",
             request = "attach",
@@ -71,7 +64,6 @@ return {
             port = 9222,
             webRoot = "${workspaceFolder}",
           },
-
           {
             name = "nextjsss",
             type = "pwa-node",
@@ -79,7 +71,6 @@ return {
             port = 9230,
             address = "127.0.0.1",
           },
-
           {
             name = "Launch Chrome (prompt for URL)",
             type = "pwa-chrome",
@@ -89,14 +80,12 @@ return {
             webRoot = vim.uv.cwd(),
             userDataDir = false,
           },
-
           {
             name = "Attach to Node process",
             type = "pwa-node",
             request = "attach",
             processId = require("dap.utils").pick_process,
           },
-
           {
             name = "Attach to Node (url)",
             type = "pwa-node",
@@ -105,7 +94,6 @@ return {
             cwd = vim.uv.cwd(),
             url = url_prompt,
           },
-
           {
             name = "Attach to Node (port)",
             type = "pwa-node",
@@ -113,14 +101,12 @@ return {
             cwd = vim.uv.cwd(),
             port = port_prompt,
           },
-
           {
             name = "Debug current Node file",
             type = "pwa-node",
             request = "launch",
             program = "${file}",
           },
-
           {
             name = "Debug current TypeScript Node file (ts-node)",
             type = "pwa-node",
@@ -133,12 +119,10 @@ return {
             protocol = "inspector",
             skipFiles = { "<node_internals>/**", "node_modules/**" },
           },
-
           {
             name = "Debug jest tests",
             type = "pwa-node",
             request = "launch",
-            -- trace = true, -- include debugger info
             runtimeExecutable = "node",
             runtimeArgs = {
               "./node_modules/jest/bin/jest.js",
