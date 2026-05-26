@@ -117,8 +117,6 @@ return {
         ["<C-w><C-l>"] = { "<C-\\><C-n><C-w>l", desc = "Navigate to right window" },
       },
       n = {
-        -- second key is the lefthand side of the map
-
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
@@ -158,7 +156,6 @@ return {
         ["<Leader>bb"] = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
         ["<Leader>bB"] = { function() require("astrocore.buffer").close(0, true) end, desc = "Force close buffer" },
 
-        -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()
             require("astroui.status.heirline").buffer_picker(

@@ -7,7 +7,8 @@ return {
   "AstroNvim/astrocommunity",
   -- language packs
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.typescript-all-in-one" },
+  -- { import = "astrocommunity.pack.typescript-all-in-one" }, -- deno broken in v0.12
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.json" },
